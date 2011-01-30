@@ -8,15 +8,98 @@
 	<meta http-equiv="Content-Type" content="text/html; charset='UTF-8'" />
 
 	<style type='text/css'>
-		
+         .scroller{
+            display:block; 
+            position: absolute;
+        }
+        
+        .scroll {
+            background:#fff; 
+            position:absolute; 
+            -moz-border-radius:4px;
+            border-radius:4px;
+            background:#eee;
+         }
+        
+        .handle{
+            display:block;
+            position:relative;
+            cursor: pointer; 
+            background:#ccc; 
+            -moz-border-radius:4px;
+            border-radius:4px;
+         }
+    
+        .increase{
+            display:block;
+            position:absolute;
+            width:15px;
+            height:15px;
+            cursor:pointer;
+            background:#666;
+            color:#fff;
+            -moz-border-radius:3px;
+            border-radius:4px;
+        }
+        
+        .decrease{
+            display:block; 
+            position:absolute; 
+            width:15px; 
+            height:15px; 
+            background:#666;
+            cursor:pointer;
+            color:#fff;
+            -moz-border-radius:3px;
+            border-radius:4px;
+        }
+        p{padding:0;}
+        
+        
+        
+        .scroller.horizontal {height:19px; width:100%; bottom:0; left:0;}
+        
+        .horizontal .scroll {left:21px; bottom:3px; height:15px; width:290px; padding:0 4px;}
+        
+        .horizontal .handle {bottom:-1px; height:13px;}
+        
+        .horizontal .increase {bottom:3px; left:3px;}
+        
+        .horizontal .decrease {bottom:3px;  right:3px; }
+        
+        .scroller.vertical {height:100%; width:19px; top:0; right:0;}
+        
+        .vertical .scroll {top:21px; right:3px; width:15px; height:120px; padding:4px 0;}
+        
+        .vertical .handle {right:-1px; width:13px;}
+        
+        .vertical .increase {top:3px; right:3px;}
+        
+        .vertical .decrease {bottom:23px;  right:3px; }
+        
+        #content {width:700px;}
+        #wrapper{width:320px; margin: 0 auto; height:170px; overflow:hidden; position:relative; padding-bottom:20px; padding-right:20px}
+        
 	</style>
 </head>
 <body>
 <h1>CostumScroller Demo</h1>
+
+<div id="wrapper">
+	<div id="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    </div>
+</div>
+
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'></script>
+<script type="text/javascript" src="Element.Measure.js"></script>
+<script type="text/javascript" src="Slider.js"></script>
 <script type='text/javascript' src='../Source/CostumScroller.js'></script>
 <script type='text/javascript'>
-	var some_var = new CostumScroller();
+	var vert= new CostumScroller($('wrapper'),$('content'));
+    
+	var horiz= new CostumScroller($('wrapper'),$('content'),{mode:'horizontal',margins:70});
 </script>
 </body>
 </html>
