@@ -13,6 +13,6 @@ How to use
 Usage is fairly simple:
 
     #JS
-    var scroll = new CostumeScroll(wrapper,options);
+    var scroll = new ScrollerBar(wrapper,options);
     
 There are quite a lot of tweaks you can do on the class, so for better understanding I suggest you read the docs.
