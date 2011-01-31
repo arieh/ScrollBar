@@ -50,7 +50,7 @@ var params = {
             +'<span class="increase"></span>'
         , mode : 'vertical'
         , rtl : false
-        , margins : 50
+        , margins : 0
         , wrapped : null
     }
     , element : null 
@@ -109,7 +109,7 @@ var params = {
         
         this.scroller.handle.setStyle(this.property,handleSize);
         
-        this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.options.margins]});
+        this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2]});
         
         this.generated = true;
     }
@@ -159,7 +159,7 @@ var params = {
     , increase : function increase(step){
         step = step || this.options.step;
         
-        if (this.position + step > this.scrollSize-this.areaSize+this.options.margins) this.position = this.scrollSize-this.areaSize+this.options.margins;
+        if (this.position + step > this.scrollSize-this.areaSize/2) this.position = this.scrollSize-this.areaSize/2;
         else this.position += step;
         
         this.scrolled.setStyle('margin-'+this.dir,-1*this.position);

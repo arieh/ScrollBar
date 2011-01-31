@@ -17,7 +17,7 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 1. step (`int`) how many pixels to move for each scroll step (default is `30`)
 2. mode (`string`) can be either `vertical` or `horizontal`(default is `vertical`)
 3. rtl (`bool`) used for horizontal scrolling (default is `false`)
-4. margins (`int`) how many margins to add to the end of the scroll zone (can help fix some issues). default is `50`.
+4. margins (`int`) how many margins to add to the end of the scroll zone (can help fix some issues). default is `0`.
 5. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to costumize it, make sure you keep the default class names, or it will break:
         - scroller - the ScrollerBar container
         - scroll - the scroll area
