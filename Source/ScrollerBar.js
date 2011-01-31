@@ -68,7 +68,6 @@ var params = {
     , initialize : function initialize(elem,opts){
         this.setOptions(opts);
         this.element = $(elem);
-       // this.scrolled = $(scrolled);
         
         this.axis = (this.options.mode =='vertical') ? 'y' :'x';
         this.dir = (this.options.mode =='vertical') ? 'top' : this.options.rtl ? 'right' : 'left';
@@ -109,7 +108,7 @@ var params = {
         
         this.scroller.handle.setStyle(this.property,handleSize);
         
-        this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2]});
+        this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2+this.options.margins]});
         
         this.generated = true;
     }
