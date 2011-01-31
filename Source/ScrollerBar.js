@@ -11,7 +11,7 @@ requires:
 - core/1.3.0 : [Class, Class.Extras, Element]
 - more/1.3.0 : [Element.Measure, Slider]
 
-provides: [ScrollBar]
+provides: [ScrollerBar]
 
 ...
 */
@@ -176,6 +176,6 @@ var params = {
     }
     , toElement : function toElement(){return this.element;}
 }, 
-ScrollBar = this.ScrollBar = new Class(params);
+ScrollerBar = this.ScrollerBar = new Class(params);
 
 }).apply(this,[this,document.id]);
