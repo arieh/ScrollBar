@@ -1,6 +1,6 @@
 /*
 ---
-description:
+description: a costume scrollbar provider
 
 license: MIT-style
 
@@ -11,7 +11,7 @@ requires:
 - core/1.3.0 : [Class, Class.Extras, Element]
 - more/1.3.0 : [Element.Measure, Slider]
 
-provides: [CostumScroller]
+provides: [ScrollBar]
 
 ...
 */
@@ -45,12 +45,13 @@ var params = {
     Implements : [Options,Events]
     , options :{
         step : 30
-        , scrollerHtml : '<span class="increase"></span>'
+        , scrollerHtml : '<span class="decrease"></span>'
             +'<div class="scroll"><span class="handle"></span></div>'
-            +'<span class="decrease"></span>'
+            +'<span class="increase"></span>'
         , mode : 'vertical'
         , rtl : false
         , margins : 50
+        , wrapped : null
     }
     , element : null 
     , scroller : null
@@ -60,36 +61,49 @@ var params = {
     , slider: null
     , events : null
     , generated : false
+    , attached : false
     , axis : 'y'
     , dir : 'top'
     , property : 'height'
-    , initialize : function initialize(elem,scrolled,opts){
+    , initialize : function initialize(elem,opts){
         this.setOptions(opts);
         this.element = $(elem);
-        this.scrolled = $(scrolled);
+       // this.scrolled = $(scrolled);
         
         this.axis = (this.options.mode =='vertical') ? 'y' :'x';
         this.dir = (this.options.mode =='vertical') ? 'top' : this.options.rtl ? 'right' : 'left';
         this.property = (this.options.mode =='vertical') ? 'height' : 'width';
-        
-        this.areaSize =  this.element.getDimensions()[this.axis];
-        this.scrollSize = this.scrolled.getDimensions()[this.axis];
-        this.generate();
+
+        this.constrcut();
         this.attach();
     }
-    , generate : function generate(){
+    , constrcut : function constrcut(){
         this.scroller = {};
         
         var scroller = this.scroller.element = new Element('div',{"class":'scroller',html:this.options.scrollerHtml}).addClass(this.options.mode)
-            , ratio = this.areaSize / this.scrollSize
+            , ratio
+            , $this = this
             , handleSize;
         
-        this.scroller.inc         = scroller.getElement('.increase');
-        this.scroller.dec        = scroller.getElement('.decrease');
+        this.scroller.inc         = scroller.getElement('.decrease');
+        this.scroller.dec        = scroller.getElement('.increase');
         this.scroller.scroll     = scroller.getElement('.scroll');
         this.scroller.handle  = scroller.getElement('.handle');
         
+        this.scrolled = (this.options.wrapped) ? this.options.wrapped : (function(){
+            var html = $this.element.get('html');
+            $this.element.empty();
+            return new Element('div',{html:html,'class':'wrapped'}).inject($this.element);
+        }());
+        
+        this.element.setStyle('overflow','hidden');
+        
         this.element.adopt(scroller);
+        
+        this.areaSize =  this.element.getDimensions()[this.axis];
+        this.scrollSize = this.scrolled.getDimensions()[this.axis];
+        
+        ratio = this.areaSize / this.scrollSize;
         
         handleSize = +this.scroller.scroll.getDimensions()[this.axis] * ratio;
         
@@ -101,6 +115,8 @@ var params = {
     }
     , attach : function attach(){
         var $this = this;
+        
+        if (this.attached) return;
         
         if (!this.generated) this.generate();
         
@@ -127,34 +143,39 @@ var params = {
         this.scroller.dec.addEvent('click',this.events.scrollDown);
         
         this.slider.addEvent('change' , function(pos){
-            if (pos < $this.position) $this.increase($this.position - pos);
-            else $this.decrease(pos - $this.position);
+            if (pos < $this.position) $this.decrease($this.position - pos);
+            else $this.increase(pos - $this.position);
         });
+        
+        this.attached = true;
     }
     , detach : function detach(){
         this.element.removeEvent('mousewheel',this.events.manageWheel);
+        this.slider.detach();
         this.scroller.each(function(el){el.destroy();});
         this.generated = false;
+        this.attached = false;
     }
-    , decrease : function decrease(step){
+    , increase : function increase(step){
         step = step || this.options.step;
         
         if (this.position + step > this.scrollSize-this.areaSize+this.options.margins) this.position = this.scrollSize-this.areaSize+this.options.margins;
         else this.position += step;
         
         this.scrolled.setStyle('margin-'+this.dir,-1*this.position);
-        this.fireEvent('decrease',[this.position]);
+        this.fireEvent('increase',[this.position]);
     }
-    , increase : function increase(step){
+    , decrease : function decrease(step){
         step = step || this.options.step;
         
         if (this.position-step < 0) this.position = 0;
         else this.position -=step;
         
         this.scrolled.setStyle('margin-'+this.dir,-1*this.position);
-        this.fireEvent('increase',[this.position]);
+        this.fireEvent('decrease',[this.position]);
     }
+    , toElement : function toElement(){return this.element;}
 }, 
-CostumScroller = this.CostumScroller = new Class(params);
+ScrollBar = this.ScrollBar = new Class(params);
 
 }).apply(this,[this,document.id]);

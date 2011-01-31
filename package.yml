@@ -1,7 +1,7 @@
-name:  CostumScroller
+name:  ScrollBar
 author:  arieh
-current:  0.1
-category:  
-tags:  []
-demo:  http://arieh.github.com/CostumScroller
-docs:  http://moodocs.net/arieh/CostumScroller/CostumScroller
+current:  0.5
+category:  Interface
+tags:  [scroller,scrollbar, costum scrollbar]
+demo:  http://arieh.github.com/ScrollBar
+docs:  http://moodocs.net/arieh/ScrollBar
