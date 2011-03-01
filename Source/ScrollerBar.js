@@ -1,6 +1,6 @@
 /*
 ---
-description: a costume scrollbar provider
+description: a custom scrollbar provider
 
 license: MIT-style
 
