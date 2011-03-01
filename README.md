@@ -1,5 +1,5 @@
 ScrollerBar
-========
+===========
 This class provides a simple, fully costumizeable interface for creating costum scrollbars, both horizontal and vertical.
 The class also comes with some default styles that you can play with.
 
