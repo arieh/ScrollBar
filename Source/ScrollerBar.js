@@ -73,10 +73,10 @@ var params = {
         this.dir = (this.options.mode =='vertical') ? 'top' : this.options.rtl ? 'right' : 'left';
         this.property = (this.options.mode =='vertical') ? 'height' : 'width';
 
-        this.constrcut();
+        this.construct();
         this.attach();
     }
-    , constrcut : function constrcut(){
+    , construct : function construct(){
         this.scroller = {};
         
         var scroller = this.scroller.element = new Element('div',{"class":'scroller',html:this.options.scrollerHtml}).addClass(this.options.mode)
