@@ -28,13 +28,13 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 
 *note: the scroller element will be added with a class representing it's mode (vertical/horizontal) so that you can style it, allowing you to use both types on the same element*
 
-ScrollerBar Method dettach : {#ScrollerBar:dettach}
+ScrollerBar Method detach : {#ScrollerBar:detach}
 ----------------
 Dettaches the scroller from the element
 
 ### Syntax:
     
-    scroller.dettach();
+    scroller.detach();
 	
     
 ScrollerBar Method attach : {#ScrollerBar:attach}
@@ -52,7 +52,7 @@ Advances the scroller
 
 ### Syntax:
     
-    scroller.inrease([pixels]);
+    scroller.increase([pixels]);
 
 ### Arguments:
 
@@ -65,7 +65,7 @@ Regresses the scroller
 
 ### Syntax:
     
-    scroller.denrease([pixels]);
+    scroller.decrease([pixels]);
 
 ### Arguments:
 
