@@ -5,7 +5,7 @@ The class also comes with some default styles that you can play with.
 
 Tested on Firefox 3.6, Chrome 8 and IE7/8
 
-![Screenshot](https://github.com/arieh/ScrollerBar/raw/master/screen.png)
+![Screenshot](https://github.com/arieh/ScrollBar/raw/master/screen.png)
 
 
 How to use
