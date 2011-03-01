@@ -1,6 +1,6 @@
 Class: ScrollerBar {#ScrollerBar}
 ==========================================
-This class provides a simple, fully costumizeable interface for creating costum scrollbars both horizontal and vertical.
+This class provides a simple, fully customizeable interface for creating custom scrollbars both horizontal and vertical.
 
 ScrollerBar Method: constructor {#ScrollerBar:constructor}
 ---------------------------------
@@ -18,7 +18,7 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 2. mode (`string`) can be either `vertical` or `horizontal`(default is `vertical`)
 3. rtl (`bool`) used for horizontal scrolling (default is `false`)
 4. margins (`int`) how many margins to add to the end of the scroll zone (can help fix some issues). default is `0`.
-5. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to costumize it, make sure you keep the default class names, or it will break:
+5. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to customize it, make sure you keep the default class names, or it will break:
         - scroller - the ScrollerBar container
         - scroll - the scroll area
         - handle - the scroll handle
