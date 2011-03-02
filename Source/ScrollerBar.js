@@ -50,6 +50,7 @@ var params = {
             +'<span class="increase"></span>'
         , mode : 'vertical'
         , margins : 0
+        , margin : 0 // correct spelling for margin
         , wrapped : null
         , alwaysShow : false
     }
@@ -107,7 +108,12 @@ var params = {
         
         this.scroller.handle.setStyle(this.property,handleSize);
 
-        if (this.areaSize >= this.scrollSize+this.options.margins 
+        // spelling correction for "margins" option:
+        if (this.options.margins) {
+            this.options.margin = this.options.margins;
+        }
+
+        if (this.areaSize >= this.scrollSize+this.options.margin
             && false == this.options.alwaysShow
         ) {
             this.hide();
@@ -120,7 +126,7 @@ var params = {
                 {
                     mode : this.options.mode,
                     range : [
-                        0, this.scrollSize - this.areaSize / 2 + this.options.margins
+                        0, this.scrollSize - this.areaSize / 2 + this.options.margin
                     ]
                 }
             );
