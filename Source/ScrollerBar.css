@@ -24,7 +24,7 @@
         .decrease{
             display:block;
             position:absolute;
-            width:0px;
+            width:0;
             height:0;
             cursor:pointer;
         }
