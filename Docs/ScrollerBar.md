@@ -1,6 +1,6 @@
 Class: ScrollerBar {#ScrollerBar}
 ==========================================
-This class provides a simple, fully customizeable interface for creating custom scrollbars both horizontal and vertical.
+This class provides a simple, fully customizable interface for creating custom scrollbars both horizontal and vertical.
 
 ScrollerBar Method: constructor {#ScrollerBar:constructor}
 ---------------------------------
@@ -14,8 +14,8 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 2. options - (Object - optional) See below:
 
 ### Options:
-1. step (`int`) how many pixels to move for each scroll step (default is `30`)
-2. mode (`string`) can be either `vertical` or `horizontal`(default is `vertical`)
+1. step (`int`) how many pixels to move for each scroll step (default is `30`).
+2. mode (`string`) can be either `vertical` or `horizontal` (default is `vertical`).
 3. margins (`int`) how many margins to add to the end of the scroll zone (can help fix some issues). default is `0`.
 4. alwaysShow (`bool`) - if set to true, will show the bar even if there is no scrolling needed. default is `false`.
 5. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to customize it, make sure you keep the default class names, or it will break:
@@ -26,12 +26,12 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
         - decrease - the decrease button (down/right)
 6. wrapped (`Element` | `String`) - if provided, the class will use this element for creating the scroller effect instead of creating a wrapping element.
 
-*note: the scroller element will be added with a class representing it's mode (vertical/horizontal) so that you can style it, allowing you to use both types on the same element*
+*note: the scroller element will be added with a class representing its mode (vertical/horizontal) so that you can style it, allowing you to use both types on the same element.*
 
 
 ScrollerBar Method detach : {#ScrollerBar:detach}
 ----------------
-Dettaches the scroller from the element
+Detaches the scroller from the element.
 
 ### Syntax:
     
@@ -42,7 +42,7 @@ Dettaches the scroller from the element
     
 ScrollerBar Method: attach {#ScrollerBar:attach}
 ----------------
-Reattaches the scroller to it's element
+Reattaches the scroller to its element.
 
 ### Syntax:
     
@@ -53,7 +53,7 @@ Reattaches the scroller to it's element
     
 ScrollerBar Method: increase {#ScrollerBar:increase}
 ----------------
-Advances the scroller
+Advances the scroller.
 
 ### Syntax:
     
@@ -61,13 +61,13 @@ Advances the scroller
 
 ### Arguments:
 
-1. pixels (`int` - optional) - how many pixels to increase. If non supplied will use the `steps` option
+1. pixels (`int` - optional) - how many pixels to increase. If not supplied will use the `steps` option.
 
 
 
 ScrollerBar Method: increase {#ScrollerBar:decrease}
 ----------------
-Regresses the scroller
+Regresses the scroller.
 
 ### Syntax:
     
@@ -75,12 +75,12 @@ Regresses the scroller
 
 ### Arguments:
 
-1. pixels (`int` - optional) - how many pixels to increase. If non supplied will use the `steps` option
+1. pixels (`int` - optional) - how many pixels to increase. If not supplied will use the `steps` option.
     
 
     
 ScrollerBar : Events {#ScrollerBar:Events}
 ---------------
- * `increase`  - fired when the is an increase in the scroller. Will pass the number of pixels moved as an argument
- * `decrease` - fired when the is a decrease in the scroller. Will pass the number of pixels moved as an argument
+ * `increase`  - fired when there is an increase in the scroller. Will pass the number of pixels moved as an argument.
+ * `decrease` - fired when there is a decrease in the scroller. Will pass the number of pixels moved as an argument.
  
