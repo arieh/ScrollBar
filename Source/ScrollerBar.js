@@ -51,6 +51,7 @@ var params = {
         , mode : 'vertical'
         , margins : 0
         , wrapped : null
+        , alwaysShow : false
     }
     , element : null 
     , scroller : null
@@ -105,7 +106,9 @@ var params = {
         handleSize = +this.scroller.scroll.getDimensions()[this.axis] * ratio;
         
         this.scroller.handle.setStyle(this.property,handleSize);
-        
+
+        if (this.areaSize >= this.scrollSize+this.options.margins && false == this.options.alwaysShow) this.hide();
+
         this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2+this.options.margins]});
         
         this.generated = true;
@@ -170,6 +173,12 @@ var params = {
         
         this.scrolled.setStyle('margin-'+this.dir,-1*this.position);
         this.fireEvent('decrease',[this.position]);
+    }
+    , show : function show(){
+        this.scroller.element.setStyle('visibility','visible');    
+    }
+    , hide : function hide(){
+        this.scroller.element.setStyle('visibility','hidden');    
     }
     , toElement : function toElement(){return this.element;}
 }, 
