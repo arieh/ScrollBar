@@ -1,11 +1,11 @@
 ScrollerBar
-========
-This class provides a simple, fully costumizeable interface for creating costum scrollbars, both horizontal and vertical.
+===========
+This class provides a simple, fully customizable interface for creating custom scrollbars, both horizontal and vertical.
 The class also comes with some default styles that you can play with.
 
 Tested on Firefox 3.6, Chrome 8 and IE7/8
 
-![Screenshot](http://github.com/arieh/ScrollerBar/raw/master/scren.png)
+![Screenshot](https://github.com/arieh/ScrollBar/raw/master/screen.png)
 
 
 How to use

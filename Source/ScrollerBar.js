@@ -1,6 +1,6 @@
 /*
 ---
-description: a costume scrollbar provider
+description: a custom scrollbar provider
 
 license: MIT-style
 
@@ -71,10 +71,10 @@ var params = {
         this.axis = (this.options.mode =='vertical') ? 'y' :'x';
         this.property = (this.options.mode =='vertical') ? 'height' : 'width';
 
-        this.constrcut();
+        this.construct();
         this.attach();
     }
-    , constrcut : function constrcut(){
+    , construct : function construct(){
         this.scroller = {};
         
         var scroller = this.scroller.element = new Element('div',{"class":'scroller',html:this.options.scrollerHtml}).addClass(this.options.mode)

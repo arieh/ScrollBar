@@ -1,6 +1,6 @@
 Class: ScrollerBar {#ScrollerBar}
 ==========================================
-This class provides a simple, fully costumizeable interface for creating costum scrollbars both horizontal and vertical.
+This class provides a simple, fully customizeable interface for creating custom scrollbars both horizontal and vertical.
 
 ScrollerBar Method: constructor {#ScrollerBar:constructor}
 ---------------------------------
@@ -17,25 +17,24 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 1. step (`int`) how many pixels to move for each scroll step (default is `30`)
 2. mode (`string`) can be either `vertical` or `horizontal`(default is `vertical`)
 3. margins (`int`) how many margins to add to the end of the scroll zone (can help fix some issues). default is `0`.
-4. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to costumize it, make sure you keep the default class names, or it will break:
+4. scrollerHTML (`string`) - the html used to create the ScrollerBar. If you wish to customize it, make sure you keep the default class names, or it will break:
         - scroller - the ScrollerBar container
         - scroll - the scroll area
         - handle - the scroll handle
         - increase - the increase button (up/left)
         - decrease - the decrease button (down/right)
-6. wrapped (`Element` | `String`) - if provided, the class will use this element for creating the scroller effect instead of creating a wrapping element.
+5. wrapped (`Element` | `String`) - if provided, the class will use this element for creating the scroller effect instead of creating a wrapping element.
 
 *note: the scroller element will be added with a class representing it's mode (vertical/horizontal) so that you can style it, allowing you to use both types on the same element*
 
 
-
-ScrollerBar Method: dettach {#ScrollerBar:dettach}
+ScrollerBar Method detach : {#ScrollerBar:detach}
 ----------------
 Dettaches the scroller from the element
 
 ### Syntax:
     
-    scroller.dettach();
+    scroller.detach();
 	
     
 
@@ -57,7 +56,7 @@ Advances the scroller
 
 ### Syntax:
     
-    scroller.inrease([pixels]);
+    scroller.increase([pixels]);
 
 ### Arguments:
 
@@ -71,7 +70,7 @@ Regresses the scroller
 
 ### Syntax:
     
-    scroller.denrease([pixels]);
+    scroller.decrease([pixels]);
 
 ### Arguments:
 
