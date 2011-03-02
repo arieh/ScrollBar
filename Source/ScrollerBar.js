@@ -113,7 +113,16 @@ var params = {
             this.hide();
         }
 
-        this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2+this.options.margins]});
+        this.slider = new Slider(
+            this.scroller.scroll,
+            this.scroller.handle,
+            {
+                mode : this.options.mode,
+                range : [
+                    0, this.scrollSize - this.areaSize / 2 + this.options.margins
+                ]
+            }
+        );
         
         this.generated = true;
     }
