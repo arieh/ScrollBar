@@ -133,8 +133,6 @@ var params = {
         
         if (this.attached) return;
         
-        if (!this.generated) this.generate();
-        
         this.events = {
             scrollUp :function scrollUp(){
                 $this.slider.set($this.position - $this.options.step);
