@@ -107,7 +107,11 @@ var params = {
         
         this.scroller.handle.setStyle(this.property,handleSize);
 
-        if (this.areaSize >= this.scrollSize+this.options.margins && false == this.options.alwaysShow) this.hide();
+        if (this.areaSize >= this.scrollSize+this.options.margins 
+            && false == this.options.alwaysShow
+        ) {
+            this.hide();
+        }
 
         this.slider = new Slider(this.scroller.scroll,this.scroller.handle,{mode:this.options.mode, range : [0,this.scrollSize-this.areaSize/2+this.options.margins]});
         
