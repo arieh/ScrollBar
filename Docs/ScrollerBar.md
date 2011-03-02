@@ -65,7 +65,7 @@ Advances the scroller.
 
 
 
-ScrollerBar Method: increase {#ScrollerBar:decrease}
+ScrollerBar Method: decrease {#ScrollerBar:decrease}
 ----------------------------------------------------
 Regresses the scroller.
 
