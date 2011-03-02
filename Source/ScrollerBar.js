@@ -111,20 +111,22 @@ var params = {
             && false == this.options.alwaysShow
         ) {
             this.hide();
+            this.slider = null;
+            this.generated = false;
+        } else {
+            this.slider = new Slider(
+                this.scroller.scroll,
+                this.scroller.handle,
+                {
+                    mode : this.options.mode,
+                    range : [
+                        0, this.scrollSize - this.areaSize / 2 + this.options.margins
+                    ]
+                }
+            );
+            this.generated = true;
         }
-
-        this.slider = new Slider(
-            this.scroller.scroll,
-            this.scroller.handle,
-            {
-                mode : this.options.mode,
-                range : [
-                    0, this.scrollSize - this.areaSize / 2 + this.options.margins
-                ]
-            }
-        );
         
-        this.generated = true;
     }
     , attach : function attach(){
         var $this = this;
