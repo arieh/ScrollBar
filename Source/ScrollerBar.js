@@ -49,7 +49,6 @@ var params = {
             +'<div class="scroll"><span class="handle"></span></div>'
             +'<span class="increase"></span>'
         , mode : 'vertical'
-        , rtl : false
         , margins : 0
         , wrapped : null
     }
@@ -70,7 +69,6 @@ var params = {
         this.element = $(elem);
         
         this.axis = (this.options.mode =='vertical') ? 'y' :'x';
-        this.dir = (this.options.mode =='vertical') ? 'top' : this.options.rtl ? 'right' : 'left';
         this.property = (this.options.mode =='vertical') ? 'height' : 'width';
 
         this.constrcut();

@@ -6,7 +6,7 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 ---------------------------------
 ### Syntax:
 
-	var scroller = new ScrollerBar(wrapper,[,options]);
+	var scroller = new ScrollerBar(wrapper[,options]);
 
 ### Arguments:
 
@@ -28,7 +28,9 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 
 *note: the scroller element will be added with a class representing it's mode (vertical/horizontal) so that you can style it, allowing you to use both types on the same element*
 
-ScrollerBar Method dettach : {#ScrollerBar:dettach}
+
+
+ScrollerBar Method: dettach {#ScrollerBar:dettach}
 ----------------
 Dettaches the scroller from the element
 
@@ -37,7 +39,9 @@ Dettaches the scroller from the element
     scroller.dettach();
 	
     
-ScrollerBar Method attach : {#ScrollerBar:attach}
+
+    
+ScrollerBar Method: attach {#ScrollerBar:attach}
 ----------------
 Reattaches the scroller to it's element
 
@@ -46,7 +50,9 @@ Reattaches the scroller to it's element
     scroller.attach();
 	
 
-ScrollerBar Method increase : {#ScrollerBar:increase}
+
+    
+ScrollerBar Method: increase {#ScrollerBar:increase}
 ----------------
 Advances the scroller
 
@@ -59,7 +65,8 @@ Advances the scroller
 1. pixels (`int` - optional) - how many pixels to increase. If non supplied will use the `steps` option
 
 
-ScrollerBar Method increase : {#ScrollerBar:decrease}
+
+ScrollerBar Method: increase {#ScrollerBar:decrease}
 ----------------
 Regresses the scroller
 
@@ -72,6 +79,7 @@ Regresses the scroller
 1. pixels (`int` - optional) - how many pixels to increase. If non supplied will use the `steps` option
     
 
+    
 ScrollerBar : Events {#ScrollerBar:Events}
 ---------------
  * `increase`  - fired when the is an increase in the scroller. Will pass the number of pixels moved as an argument
