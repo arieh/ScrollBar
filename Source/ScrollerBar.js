@@ -133,38 +133,41 @@ var params = {
         
         if (this.attached) return;
         
-        this.events = {
-            scrollUp :function scrollUp(){
-                $this.slider.set($this.position - $this.options.step);
-            }
-            , scrollDown : function scrollDown(){
-                $this.slider.set($this.position + $this.options.step);
-            }
-            , manageWheel : function manageWheel(e){
-                e.preventDefault();
-                if (e.wheel >0){
-                    $this.events.scrollUp();
-                }else{
-                    $this.events.scrollDown();
-                }    
-            }
-        };
-        
-        this.element.addEvent('mousewheel',this.events.manageWheel);
-                
-        this.scroller.inc.addEvent('click',this.events.scrollUp);
-        this.scroller.dec.addEvent('click',this.events.scrollDown);
-        
-        this.slider.addEvent('change' , function(pos){
-            if (pos < $this.position) $this.decrease($this.position - pos);
-            else $this.increase(pos - $this.position);
-        });
-        
+        if (this.slider) {
+            this.events = {
+                scrollUp :function scrollUp(){
+                    $this.slider.set($this.position - $this.options.step);
+                }
+                , scrollDown : function scrollDown(){
+                    $this.slider.set($this.position + $this.options.step);
+                }
+                , manageWheel : function manageWheel(e){
+                    e.preventDefault();
+                    if (e.wheel >0){
+                        $this.events.scrollUp();
+                    }else{
+                        $this.events.scrollDown();
+                    }    
+                }
+            };
+            
+            this.element.addEvent('mousewheel',this.events.manageWheel);
+                    
+            this.scroller.inc.addEvent('click',this.events.scrollUp);
+            this.scroller.dec.addEvent('click',this.events.scrollDown);
+            
+            this.slider.addEvent('change' , function(pos){
+                if (pos < $this.position) $this.decrease($this.position - pos);
+                else $this.increase(pos - $this.position);
+            });
+        }
+        // even if nothing is attached (i.e., this.slider = null), we don't
+        // want to run through attach() again
         this.attached = true;
     }
     , detach : function detach(){
         this.element.removeEvent('mousewheel',this.events.manageWheel);
-        this.slider.detach();
+        if (this.slider) this.slider.detach();
         this.scroller.each(function(el){el.destroy();});
         this.generated = false;
         this.attached = false;
