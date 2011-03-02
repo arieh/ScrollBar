@@ -1,9 +1,9 @@
 Class: ScrollerBar {#ScrollerBar}
-==========================================
+=================================
 This class provides a simple, fully customizable interface for creating custom scrollbars both horizontal and vertical.
 
 ScrollerBar Method: constructor {#ScrollerBar:constructor}
----------------------------------
+----------------------------------------------------------
 ### Syntax:
 
 	var scroller = new ScrollerBar(wrapper[,options]);
@@ -30,7 +30,7 @@ ScrollerBar Method: constructor {#ScrollerBar:constructor}
 
 
 ScrollerBar Method detach : {#ScrollerBar:detach}
-----------------
+-------------------------------------------------
 Detaches the scroller from the element.
 
 ### Syntax:
@@ -41,7 +41,7 @@ Detaches the scroller from the element.
 
     
 ScrollerBar Method: attach {#ScrollerBar:attach}
-----------------
+------------------------------------------------
 Reattaches the scroller to its element.
 
 ### Syntax:
@@ -52,7 +52,7 @@ Reattaches the scroller to its element.
 
     
 ScrollerBar Method: increase {#ScrollerBar:increase}
-----------------
+----------------------------------------------------
 Advances the scroller.
 
 ### Syntax:
@@ -66,7 +66,7 @@ Advances the scroller.
 
 
 ScrollerBar Method: increase {#ScrollerBar:decrease}
-----------------
+----------------------------------------------------
 Regresses the scroller.
 
 ### Syntax:
@@ -80,7 +80,7 @@ Regresses the scroller.
 
     
 ScrollerBar : Events {#ScrollerBar:Events}
----------------
+------------------------------------------
  * `increase`  - fired when there is an increase in the scroller. Will pass the number of pixels moved as an argument.
  * `decrease` - fired when there is a decrease in the scroller. Will pass the number of pixels moved as an argument.
  
